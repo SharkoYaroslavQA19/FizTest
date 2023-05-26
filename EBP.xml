@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EBP" parallel="classes" thread-count="1">
+
+    <test name="EBP">
+        <groups>
+            <run>
+                <include name="EBP"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="TestNibbd"></package>
+        </packages>
+    </test>
+</suite>
