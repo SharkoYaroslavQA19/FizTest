@@ -14,13 +14,16 @@ public class FirstQuery {
 
     public static Map<String, String> sqlQuery(String sqlString) {
 
-        String url =  "jdbc:oracle:thin:adminuztest/adminuztest@vntxdb.softclub.by:1521/scntuztest";
-                // "jdbc:oracle:thin:adminuztest/adminuztest@vntxdb.softclub.by:1521/scntuztest";
-                //"jdbc:oracle:thin:adminuz/adminuz@vntxdb.softclub.by:1521/scntuzdev"
-        String userName = "adminuztest";
+        String url =
+                System.getenv().getOrDefault("url", PropertyReader.getProperty("cfgjdbc"));
+        // "jdbc:oracle:thin:adminuztest/adminuztest@vntxdb.softclub.by:1521/scntuztest";
+        //"jdbc:oracle:thin:adminuz/adminuz@vntxdb.softclub.by:1521/scntuzdev"
+        String userName =
+                System.getenv().getOrDefault("userName", PropertyReader.getProperty("cfglogin"));
         //"adminuz";
         //"adminuztest";
-        String password = "adminuztest";
+        String password =
+                System.getenv().getOrDefault("password", PropertyReader.getProperty("cfgpassword"));
         //"adminuz";
         //"adminuztest";
         Map<String, String> result = null;
