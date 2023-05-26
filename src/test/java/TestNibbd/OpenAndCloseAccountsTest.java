@@ -4,14 +4,11 @@ import Model.OpenAccount;
 import Model.CloseAccount;
 import Specification.Specification;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import DataBase.DBunits;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static io.restassured.RestAssured.given;
 
@@ -25,7 +22,7 @@ public class OpenAndCloseAccountsTest {
     private final static Integer PLANID = 20406;
     private final static Integer CURRENCYID = 840;
     private final static Integer NUMBERID = 1;
-    private static String CLOSEDATE= null;//"2023-03-08";
+    private static String CLOSEDATE= null;
     private final static Integer HTTPSTATUSOK = 200;
 
 

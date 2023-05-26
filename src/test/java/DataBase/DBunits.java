@@ -38,7 +38,7 @@ public class DBunits {
     @Test
     public static String getOperDay(Integer BRANCHID) {
         Map<String, String> requestInfo;
-        String sql = String.format("select pkgtesting.GetSystemDate( '1104','YYYY-MM-DD') as oDate from dual",BRANCHID);
+        String sql = String.format("select pkgtesting.GetSystemDate( %s,'YYYY-MM-DD') as oDate from dual",BRANCHID);
         requestInfo = FirstQuery.sqlQuery(sql);
         return requestInfo.get("ODATE");
     }
