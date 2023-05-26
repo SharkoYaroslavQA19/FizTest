@@ -32,7 +32,6 @@ public class OpenAndCloseAccountsTest {
     @Test(groups = {"NIBBD"})
     @Description("открытие лицевого счета ФЛ через НИББД")
     public void openAccountTestPositive() {
-        /*
         //Отправка запроса на открытие счета
         Specification.installSpecification(Specification.requestSpecification());
         OpenAccount openAccount = new OpenAccount(CLIENTIDOK, BRANCHID, PLANID, CURRENCYID, NUMBERID);
@@ -45,8 +44,7 @@ public class OpenAndCloseAccountsTest {
         Assert.assertEquals(HTTPSTATUSOK, response.getStatusCode());
 
         //Отправка запроса на закрытие счета
-        CLOSEDATE = DBunits.getOperDay();
-
+        CLOSEDATE = DBunits.getOperDay(BRANCHID);
         System.out.println(CLOSEDATE);
         CloseAccount closeAccount = new CloseAccount(accId,BRANCHID,CLOSEDATE);
         Response response1 = given()
@@ -58,6 +56,6 @@ public class OpenAndCloseAccountsTest {
         //Удаление из БД счета
         DBunits.deleteAccountByAccNum(String.valueOf(accId));
 
- */
+
     }
 }

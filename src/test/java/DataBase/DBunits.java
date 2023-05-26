@@ -1,6 +1,6 @@
 package DataBase;
 
-import io.qameta.allure.Step;
+
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -35,10 +35,11 @@ public class DBunits {
         requestInfo = FirstQuery.sqlQuery(sql);
         return null;
     }
-    public static String getOperDay() {
+    @Test
+    public static String getOperDay(Integer BRANCHID) {
         Map<String, String> requestInfo;
-        String sql = String.format("select getoday(0, pkgenv.UserID,1104)from dual ");
+        String sql = String.format("select pkgtesting.GetSystemDate( '1104','YYYY-MM-DD') as oDate from dual",BRANCHID);
         requestInfo = FirstQuery.sqlQuery(sql);
-        return requestInfo.get("GETODAY(0,PKGENV.USERID,1104)");
+        return requestInfo.get("ODATE");
     }
 }
